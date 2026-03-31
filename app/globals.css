@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bench-950: #0c1117;
+  --color-bench-900: #131b25;
+  --color-bench-800: #1a2535;
+  --color-bench-700: #243348;
+  --color-bench-600: #2e4460;
+  --color-bench-500: #3a5a80;
+  --color-bench-400: #5a8ab8;
+  --color-bench-300: #88b4da;
+  --color-bench-200: #b8d6ee;
+  --color-bench-100: #ddeaf5;
+  --color-bench-50: #f0f6fb;
+  --color-accent-500: #e87a2e;
+  --color-accent-400: #f59650;
+  --color-accent-300: #fbb27a;
+  --color-accent-600: #c55f1a;
+  --font-display: "DM Sans", system-ui, sans-serif;
+  --font-body: "DM Sans", system-ui, sans-serif;
+  --font-mono: "DM Mono", "Fira Code", monospace;
+}
+
+html, body {
+  font-family: var(--font-body);
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--color-bench-600); border-radius: 3px; }
+
+@keyframes fadeSlideIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.chat-msg { animation: fadeSlideIn 0.3s ease-out forwards; }
+
+@keyframes pulse-dot {
+  0%, 80%, 100% { opacity: 0.3; transform: scale(0.8); }
+  40% { opacity: 1; transform: scale(1); }
+}
+.typing-dot { animation: pulse-dot 1.4s ease-in-out infinite; }
+.typing-dot:nth-child(2) { animation-delay: 0.2s; }
+.typing-dot:nth-child(3) { animation-delay: 0.4s; }
